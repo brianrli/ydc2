@@ -1,4 +1,4 @@
-from flask import Flask, request
+from flask import Flask, request, render_template
 from app import app
 from config import si
 from models import image
@@ -13,10 +13,8 @@ def index():
 def search():
 	#get GET request
 	request_args = request.args.to_dict()
-	print(request_args)
-
+	
 	#forward them on to apache solr server
-	for result in si.query(**request_args).execute(constructor=image):
-		print result
+	Images = si.query(**request_args).execute(constructor=image)
 
-	return "Okay...."
+	return render_template('search.html',Images=Images)

@@ -1,0 +1,11 @@
+<html>
+	<head>
+		<title>ydc2 demo app</title>
+	</head>
+	<body>
+		{% for image in Images%}
+			{{image.url}}
+			<img src= {{image.url}} alt="image being displayed"> <br>
+		{% endfor %}
+	</body>
+</html>
