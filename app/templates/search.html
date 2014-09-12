@@ -1,13 +1,12 @@
-<html>
-	<head>
-		<title>ydc2 demo app</title>
-	</head>
-	<body>
+{% extends "base.html"%}
+
+{% block content %}
+	{%if Images%}
 		{% for image in Images%}
 			{% if image.online %}
 				{{image.resourceUrl[0]}} <br>
 				<img src= {{image.resourceUrl[0]}} alt="image being displayed"> <br>
 			{% endif %}
 		{% endfor %}
-	</body>
-</html>
+	{% endif %}
+{% endblock %}
