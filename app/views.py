@@ -2,6 +2,7 @@ from flask import Flask, request, render_template
 from app import app
 from config import si
 from models import image
+import urllib2
 
 @app.route('/')
 @app.route('/index')
