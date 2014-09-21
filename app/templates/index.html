@@ -1,1 +1,32 @@
-{% extends "base.html" %}
+<head>
+	<meta charset="utf-8" />
+	<title>Galereya</title>
+    <link href="../static/css/jquery.galereya.css" rel="stylesheet"/>
+    <!--[if lt IE 9]>
+    <link rel="stylesheet" href="css/jquery.galereya.ie.css">
+    <![endif]-->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script type="text/javascript" src="/static/js/jquery.galereya.min.js"></script>
+    <script>
+        $(function() {
+            $('#galleryherepls').galereya();
+        });
+    </script>
+</head>
+<body>
+    <div id="galleryherepls">
+        <img src="http://deliver.odai.yale.edu/content/repository/YCBA/object/40109/type/2/format/3"
+            alt="Title here"
+            title="Or here(more priority)"
+            data-desc="some description"
+            data-category="image category here"
+            data-fullsrc="path/to/full/image."
+        />        
+        <img src="http://deliver.odai.yale.edu/content/repository/YCBA/object/40109/type/2/format/3"
+            alt="Image"
+            data-desc="Example"
+            data-fullsrc="imgs/image42.jpg"
+        />
+    </div>
+</body>

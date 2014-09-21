@@ -1,5 +1,5 @@
 from flask import Flask 
-from config import si
+# from config import si
 
 app = Flask(__name__)
 
