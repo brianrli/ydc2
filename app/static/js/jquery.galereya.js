@@ -46,18 +46,18 @@
          * @type {Object}
          */
         var defaults = {
-            spacing: 0,
-            wave: true,
-            waveTimeout: 300,
+            spacing: 5,
+            wave: false,
+            // waveTimeout: 300,
             modifier: '',
-            slideShowSpeed: 10000,
-            cellFadeInSpeed: 200,
-            noCategoryName: 'all',
-            disableSliderOnClick: false,
+            // slideShowSpeed: 10000,
+            // cellFadeInSpeed: 200,
+            // noCategoryName: 'all',
+            // disableSliderOnClick: false,
             load: function (next) {
                 next();
             },
-            onCellClick: function (e) {}
+            // onCellClick: function (e) {}
         };
 
         /**
@@ -289,15 +289,6 @@
          * Building DOM
          */
         var buildDOM = function () {
-            if (categories.length > 0) {
-                $categoriesList = $('<ul class="galereya-cats" />');
-                $top = $('<div class="galereya-top" />');
-                self.prepend($top.html($categoriesList));
-                $categoriesList.append('<li class="galereya-cats-item"><span>' + self.options.noCategoryName + '</span></li>');
-                for (var i = 0; i < categories.length; i++) {
-                    $categoriesList.append('<li class="galereya-cats-item"><span>' + categories[i] + '</span></li>');
-                }
-            }
 
             var $img, title, desc;
             $imgs.wrapAll('<div class="galereya-grid" />').each(function (i, img) {
