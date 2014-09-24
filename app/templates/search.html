@@ -1,12 +1,22 @@
-{% extends "base.html"%}
+{% extends "base.html" %}
+ -->{% block content %}
+<!-- <body> -->
+<form role="form" action="{{url_for('index')}}" name = 'searchForm' method='GET'>
+	<div class="form-group">
+		<input type="text" class="form-control" name="publishDate" > <br>
+		<input type="submit" class="form-control" value="Find" class="submitButton"/>
+	</div>
+</form>
 
-{% block content %}
-	{%if Images%}
-		{% for image in Images%}
-			{% if image.online %}
-				{{image.resourceUrl[0]}} <br>
-				<img src= {{image.resourceUrl[0]}} alt="image being displayed" style="width:200px;height:200px"> <br>
-			{% endif %}
-		{% endfor %}
-	{% endif %}
+{%if Images %}
+<div id="galleryherepls">
+    {% for image in Images %}
+            <img src= {{image.resourceUrl[0]}}
+                title= "{{image.title}}" 
+                data-fullsrc= {{image.resourceUrl[0]}}
+            />        
+    {% endfor %}
+   </div>
+{% endif %}
+<!-- </body> -->
 {% endblock %}

@@ -1,34 +1,20 @@
-<head>
-	<meta charset="utf-8" />
-	<title>Galereya</title>
-    
-    <!-- CSS -->
-    <link href="../static/css/jquery.galereya.css" rel="stylesheet"/>
+{% extends "base.html" %}
+ -->{% block content %}
+<!-- <body> -->
+<form action="{{url_for('index')}}" name = 'searchForm' method='GET'>
+    <input type="text" name="publishDate" > <br>
+    <input type="submit" value="Find" class="submitButton"/>
+</form>
 
-    <!-- JavaScripts -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-    <script type="text/javascript" src="/static/js/jquery.galereya.js"></script>
-
-    <script>
-        $(function() {
-            $('#galleryherepls').galereya();
-        });
-    </script>
-
-</head>
-<body>
-    {%if Images %}
-    <div id="galleryherepls">
-        {% for image in Images %}
-            
-                <img src= {{image.resourceUrl[0]}}
-                    alt={{image.title}}
-                    title={{image.title}}
-                    data-desc="some description"
-                    data-category="image category here"
-                    data-fullsrc= {{image.resourceUrl[0]}}
-                />        
-        {% endfor %}
-        </div>
-    {% endif %}
-</body>
+{%if Images %}
+<div id="galleryherepls">
+    {% for image in Images %}
+            <img src= {{image.resourceUrl[0]}}
+                title= "{{image.title}}" 
+                data-fullsrc= {{image.resourceUrl[0]}}
+            />        
+    {% endfor %}
+   </div>
+{% endif %}
+<!-- </body> -->
+{% endblock %}

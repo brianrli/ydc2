@@ -8,7 +8,7 @@ class image:
 		self.author = auth_author
 		self.resourceUrl = resourceURL
 		
-		if resource_facet == "Resource available online":
+		if resource_facet == "Resource available online" or resourceURL == "none":
 			self.online = True
 		else:
 			self.online = False
