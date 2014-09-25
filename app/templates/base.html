@@ -1,7 +1,6 @@
 <html>
     <head>
-        <title>YDC2</title> 
-        
+        <title>YDC2 Image Viewer</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
         <!-- Bootstrap -->
@@ -10,6 +9,7 @@
         <link href="/static/css/bootstrap-responsive.css" type="text/css" rel="stylesheet">
         <link href="../static/css/jquery.galereya.css" rel="stylesheet"/>
 
+        <link href='http://fonts.googleapis.com/css?family=Merriweather&#8217' rel='stylesheet' type='text/css'>
         
         <!-- javascript -->
         <script type="text/javascript" 
@@ -23,14 +23,31 @@
         });
         </script>
 
-        <div class = "page-header">
-            <h1> YDC2 <small> images by the years </small> </h1>
-        </div>
+        <style>
+            body {
+                padding-top: 10px;
+                font-size: 16px;
+                font-family: "Merriweather",serif;
+            }            
+
+            h1 {
+                font-family: "Merriweather", serif;
+                font-weight: 400;
+                font-size: 40px;
+            }
+
+            .margin-base-vertical {
+                margin: 5px 0;
+            }
+
+        </style>
+
     </head>
 
     <body>
         {% block content %}
         <!-- derived templates can insert themselves -->
         {% endblock %}
+
     </body>
 </html>

@@ -111,7 +111,7 @@
 /* Gallery grid(begin) */
 .galereya-grid {
     position: relative;
-    top: 50px;
+    top: 30px;
 
     width: 100%;
     height: 100%;
@@ -185,8 +185,8 @@
     -moz-transition: all 0.5s ease-out;
     -o-transition: all 0.5s ease-out;
     transition: all 0.5s ease-out;
-    -webkit-box-shadow: inset 0 0 10px 3px #000;
-    box-shadow: inset 0 0 10px 3px #000;
+    /*-webkit-box-shadow: inset 0 0 10px 3px #000;*/
+    /*box-shadow: inset 0 0 10px 3px #000;*/
 }
 
 .galereya-cell:hover {
