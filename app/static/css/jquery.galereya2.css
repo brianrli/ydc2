@@ -1,53 +1,100 @@
-/* Gallery (begin) */
-.galereya {
 
+.galereya {
     max-width: 1400px;
     margin: auto;
 }
-    .galereya-top {display: none;}
 
-    .galereya-grid {top: 0;}
+    .galereya .galereya-top { display: none; }
 
-    .galereya-cell {
-        width: 100px;
+    .galereya .galereya-grid { top: 0; }
+
+    .galereya .galereya-cell {
+        width: 80px;
         padding: 0;
 
-        -webkit-transition:-webkit-transform 0.3s ease-out;
+        -webkit-transition: -webkit-transform 0.3s ease-out;
         -moz-transition: -moz-transform 0.3s ease-out;
         -o-transition: -o-transform 0.3s ease-out;
         transition: transform 0.3s ease-out;
     }
-
-    .galereya-cell:hover {
-        -webkit-transition: -webkit-transform:scale(1.2);
-        -moz-transition: -moz-transform:scale(1.2);
-        -ms-transform:scale(1.2);
-        -o-transform:scale(1.2);
-        transform: scale(1.2);
+    .galereya .galereya-cell:hover {
+        -webkit-transform: scale(1.5);
+        -moz-transform: scale(1.5);
+        -ms-transform: scale(1.5);
+        -o-transform: scale(1.5);
+        transform: scale(1.5);
         -webkit-box-shadow: 0 0 2em #000;
         box-shadow: 0 0 2em #000;
     }
 
-        .galereya-cell-img {
-            width: 100px;
+        .galereya .galereya-cell-img { width: 80px; }
+
+        .galereya .galereya-cell-desc { display: none; }
+
+        .galereya .galereya-cell-overlay {
+            -webkit-box-shadow: none;
+            box-shadow: none;
         }
 
-        .galereya-cell-desc {
-            display:none;}
-        }
+.galereya-slider {
+    opacity: 0;
 
-        .galereya-cell-overlay {
-        -webkit-box-shadow: none;
-        box-shadow: none;
-        }
-
-    /* Gallery grid(end) */
-
-/* Other devices and screens */
-@media only screen and (min-width: 601px) {
-    .galereya-cell {width: 150px;}
-    .galereya-cell-img {width: 150px;}
-    .galereya-cell-desc {
-        display: none;
-    }
+    -webkit-transform: translateX(0);
+    -moz-transform: translateX(0);
+    -ms-transform: translate(0);
+    -o-transform: translateX(0);
+    transform: translateX(0);
+    -webkit-transition: opacity .5s ease-out;
+    -moz-transition: opacity .5s ease-out;
+    transition: opacity .5s ease-out;
+    -o-transition: none;
 }
+.galereya-slider.opened { opacity: 100; }
+
+    .galereya-slider .galereya-slider-desc {
+        font-size: 12pt;
+
+        top: 0;
+        bottom: auto;
+        left: 0;
+
+        width: 200px;
+    }
+
+    .galereya-slider .galereya-slider-play,
+    .galereya-slider .galereya-slider-close {
+        top: auto;
+        bottom: 0;
+    }
+
+    .galereya-slider .galereya-slider-slide {
+        opacity: 100;
+        background: #000 url(img/wild_oliva.png);
+        -webkit-transition: opacity .5s ease-out;
+        -moz-transition: opacity .5s ease-out;
+        transition: opacity .5s ease-out;
+        -o-transition: none;
+    }
+    .galereya-slider .galereya-slider-slide.next {
+        opacity: 0;
+        -webkit-transform: translateX(0);
+        -moz-transform: translateX(0);
+        -ms-transform: translate(0);
+        -o-transform: translateX(0);
+        transform: translateX(0);
+    }
+    .galereya-slider .galereya-slider-slide.current {}
+    .galereya-slider .galereya-slider-slide.prev {}
+
+
+        .galereya-slider .galereya-slide-img {
+            -webkit-box-shadow: 0 0 1em #000;
+            box-shadow: 0 0 2em #000;
+        }
+
+
+@media only screen and (min-width: 601px) {
+    .galereya .galereya-cell { width: 150px; }
+        .galereya .galereya-cell-img { width: 150px; }
+}
+    
